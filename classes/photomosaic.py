@@ -27,7 +27,10 @@ class Photomosaic:
         best_distance = float("inf")
 
         for tile, color in self._lab_mapping.items():
-            if tile in self.tiles_used and self.tiles_used[tile] >= self._available_tiles[tile]:
+            if (
+                tile in self.tiles_used
+                and self.tiles_used[tile] >= self._available_tiles[tile]
+            ):
                 continue
 
             distance = np.linalg.norm(tile_color - color)
@@ -90,5 +93,5 @@ class Photomosaic:
             "create_photomosaic",
             f"Photomosaic with {total_tiles} tiles created in {{:.2f}} seconds.",
         )
-        print(f'{total_tiles / total_time:.2f} tiles per second.')
+        print(f"{total_tiles / total_time:.2f} tiles per second.")
         return mosaic_image

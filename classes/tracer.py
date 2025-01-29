@@ -2,6 +2,7 @@
 # by different parts of the code.
 import time
 
+
 class Tracer:
     def __init__(self):
         self._tracers = {}
@@ -17,4 +18,4 @@ class Tracer:
             del self._tracers[tracer_name]
             return elapsed_time
         else:
-            print(f'{tracer_name} is not being traced.')
+            print(f"{tracer_name} is not being traced.")

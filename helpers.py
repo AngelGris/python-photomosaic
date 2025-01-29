@@ -1,9 +1,9 @@
-
 import os
 import numpy as np
 import json
 from PIL import Image
 from skimage.color import rgb2lab
+
 
 def get_average_color_lab(image: Image) -> np.ndarray:
     """
@@ -21,6 +21,7 @@ def get_average_color_lab(image: Image) -> np.ndarray:
 
     return numpy_avg
 
+
 def load_existing_tiles(folder: str) -> dict:
     """
     Load the list of existing tiles from the output directory.
@@ -37,17 +38,18 @@ def load_existing_tiles(folder: str) -> dict:
         else:
             existing_tiles[tile_hash] = 1
 
-    print(f'Loaded {len(existing_tiles)} existing tiles.')
+    print(f"Loaded {len(existing_tiles)} existing tiles.")
     return existing_tiles
 
-def load_lab_mapping(folder: str)-> dict:
-    file_path = os.path.join(folder, 'lab_mapping.json')
+
+def load_lab_mapping(folder: str) -> dict:
+    file_path = os.path.join(folder, "lab_mapping.json")
 
     if not os.path.exists(file_path):
         return {}
 
     # Load mapping from JSON file
-    with open(file_path, 'r') as lab_file:
+    with open(file_path, "r") as lab_file:
         lab_mapping = json.load(lab_file)
 
     return lab_mapping
