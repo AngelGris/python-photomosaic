@@ -1,0 +1,4 @@
+pre-commit
+numpy>=2.2.1
+pillow>=11.1.0
+scikit-image>=0.25.0
