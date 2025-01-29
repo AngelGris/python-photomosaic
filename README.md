@@ -82,6 +82,10 @@ This will generate the photomosaic and save it to the main folder.
 
 ---
 
+## Examples
+
+![Examples](readme_images/examples.jpg)
+
 ## Further improvements
 
 - Add support for PNG images as input, but save all tiles as JPG for performance.
